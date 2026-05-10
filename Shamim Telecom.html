@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <title>শামীম টেলিকম 
+ </title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; background-color: #f4f4f4; }
+        .container { max-width: 450px; background: white; padding: 20px; margin: auto; border-radius: 10px; }
+        input, textarea { width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box; }
+        button { background: #25d366; color: white; border: none; padding: 15px; width: 100%; cursor: pointer; border-radius: 5px; font-weight: bold; }
+    </style>
+</head>
+<body>
+(শামীম টেলিকম এন্ড মোবাইল সার্ভিসিং সেন্টার) 
+<div class="container">
+    <h2>এনআইডি পিডিএফ অর্ডার / জন্ম নিবন্ধন /স্মার্ট pdf অর্ডার /এন আই ডি সার্ভার কপি অর্ডার  ফর্ম</h2>
+    <form id="orderForm">
+        <input type="text" id="name" placeholder="ভোটার আইডি কার্ডের ইংলিশে নাম " required>
+<!-- নতুন ডায়ালগ বা সিলেক্ট অপশন -->
+        <label>কি ধরণের সেবা প্রয়োজন?</label>
+        <select id="serviceType">
+            <option value="এনআইডি পিডিএফ (NID PDF)">এনআইডি পিডিএফ (NID PDF)</option>
+            <option value="স্মার্ট এনআইডি পিডিএফ">স্মার্ট এনআইডি পিডিএফ</option>
+            <option value="এনআইডি সার্ভার কপি">এনআইডি সার্ভার কপি</option>
+            <option value="জন্ম নিবন্ধন কপি">জন্ম নিবন্ধন কপি</option>
+            <option value="অন্যান্য">অন্যান্য</option>
+        </select>
+        <input type="text" id="nid_info" placeholder="এনআইডি/ভোটার নাম্বার " required> জন্ম তারিখ
+        <input type="date" id="dob" placeholder="জন্ম তারিখ=10/12/1999">
+        <input type="text" id="phone" placeholder="আপনার ফোন নম্বর" required>
+        <input type="text" id="txid" placeholder="বিকাশ/নগদ ট্রানজেকশন আইডি" required>
+        
+        <label>টাকা পেমেন্ট স্ক্রিনশট  ছবি আপলোড করুন:</label>
+        <input type="file" id="imageInput" accept="image/*">
+        
+        <p style="font-size: 14px;">টাকা সেন্ড মানি করুন  : 01346295230 (বিকাশ/নগদ)</p>
+        
+        <button type="button" onclick="sendToWhatsApp()">অর্ডার পাঠান (WhatsApp)</button>
+    </form>
+</div>
+
+<script>
+    function sendToWhatsApp() {
+        let name = document.getElementById("name").value;
+        let nid_info = document.getElementById("nid_info").value;
+        let dob = document.getElementById("dob").value;
+        let phone = document.getElementById("phone").value;
+        let txid = document.getElementById("txid").value;
+        let fileInput = document.getElementById("imageInput");
+
+        let message = "নতুন অর্ডার এসেছে!%0A" +
+                      "নাম: " + name + "%0A" +
+                      "তথ্য: " + nid_info + "%0A" +
+                      "জন্ম তারিখ: " + dob + "%0A" +
+                      "ফোন: " + phone + "%0A" +
+                      "ট্রানজেকশন আইডি: " + txid + "%0A" +
+                      "ছবি: কাস্টমার ছবি আপলোড করেছে (দয়া করে দেখুন)";
+
+        let whatsappURL = "https://wa.me/8801755358906?text=" + encodeURIComponent(message);
+        window.open(whatsappURL, '_blank');
+    }
+</script>
+
+</body>
+</html>
+<a href="https://wa.me/8801755358906?text=আমি%20পেমেন্ট%20করতে%20চাই" target="_blank" style="background:#007bff; color:white; padding:10px; text-decoration:none; border-radius:5px;">                             বিকাশ/নগদ পেমেন্ট করতে এখানে ক্লিক করুন</a>
